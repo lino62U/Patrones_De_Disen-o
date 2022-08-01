@@ -27,7 +27,7 @@ class LightOnCommand : public Command
 private:
 	Light *mLight;
 public:
-        LightOffCommand()
+        LightOnCommand()
 	{nmLight = new Light();}
 	void execute(){
 		mLight->on();
@@ -82,7 +82,7 @@ int main()
 	control->setCommand(lightOff);
 	control->buttonPressed();
 
-	delete light, lightOn, lightOff, control;
+	delete lightOn, lightOff, control;
 
 	return 0;
 }
