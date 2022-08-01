@@ -28,7 +28,7 @@ private:
 	Light *mLight;
 public:
         LightOnCommand()
-	{nmLight = new Light();}
+	{mLight = new Light();}
 	void execute(){
 		mLight->on();
 	}
@@ -42,7 +42,7 @@ private:
 	Light *mLight;
 public:
         LightOffCommand()
-	{nmLight = new Light();}
+	{mLight = new Light();}
 	void execute(){
 		mLight->off();
 	}
