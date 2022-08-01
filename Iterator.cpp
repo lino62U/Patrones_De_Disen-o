@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 
+class Stack;
+class StackIter;
+
+
 class Stack
 {
     int items[10];
