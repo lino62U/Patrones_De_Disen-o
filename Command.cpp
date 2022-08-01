@@ -27,7 +27,8 @@ class LightOnCommand : public Command
 private:
 	Light *mLight;
 public:
-        LightOnCommand(Light *light) : mLight(light) {}
+        LightOffCommand()
+	{nmLight = new Light();}
 	void execute(){
 		mLight->on();
 	}
@@ -40,7 +41,8 @@ class LightOffCommand : public Command
 private:
 	Light *mLight;
 public:
-        LightOffCommand(Light *light) : mLight(light) {}
+        LightOffCommand()
+	{nmLight = new Light();}
 	void execute(){
 		mLight->off();
 	}
@@ -67,12 +69,9 @@ public:
 // The client
 int main() 
 {
-	// Receiver 
-	Light *light = new Light;
-
 	// concrete Command objects 
-	LightOnCommand *lightOn = new LightOnCommand(light);
-	LightOffCommand *lightOff = new LightOffCommand(light);
+	LightOnCommand *lightOn = new LightOnCommand();
+	LightOffCommand *lightOff = new LightOffCommand();
 
 	// invoker objects
 	RemoteControl *control = new RemoteControl;
